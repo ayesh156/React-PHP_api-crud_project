@@ -1,0 +1,18 @@
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+ 
+RewriteCond %{SERVER_PORT} 80
+RewriteRule ^(.*)$ http://localhost/$1 [R=301,L]
+
+
+
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteCond %{REQUEST_FILENAME} !-l
+  
+  RewriteRule ^([^\.]+)$ $1.php [NC,L] 
+
+
+
+
+</IfModule>
